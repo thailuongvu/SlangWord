@@ -127,7 +127,79 @@ public class Dic {
         }
     }
 
-   
+    public void addSlang()
+    {
+        System.out.print("Nhap vao slang: ");
+        String slang=scan.nextLine();
+        System.out.print("Nhap vao def: ");
+        String def=scan.nextLine();
 
+        for (Map.Entry<String, List<String>> entry : list.entrySet()) {
+            
+            if(entry.getKey().equals(slang))
+            {
+                System.out.println(" This Slang is exist. ");
+                // StringBuilder tmp=new StringBuilder();
+                // for(String t:entry.getValue())
+                // {
+                //     tmp.append(t+", ");
+                // }
+                // tmp.setLength(tmp.length() - 2);
+
+                System.out.println(" Do you want override or duplicate");
+                System.out.println(" 1: Override ");
+                System.out.println(" 2:Duplicate");
+                System.out.print(" Input your selection: ");
+                int choice=Integer.parseInt(scan.nextLine());
+                switch(choice)
+                {
+                    case 1:
+                        list.get(slang).clear();
+                        list.get(slang).add(def);
+                        return;
+                    case 2:
+                        // List<String>newList =new ArrayList<String>();
+                        // newList=list.get(slang);
+                        // System.out.print(newList);
+                        // list.put(slang,newList);
+                        list.get(slang).add(def);
+                        return;
+                }
+               
+                
+                
+            }
+
+            
+        }
+        list.put(slang,new ArrayList<String>());
+        list.get(slang).add(def);
+        
+
+    }
+    public void editSlang()
+    {
+        System.out.print("Nhap vao slang: ");
+        String slang=scan.nextLine();
+        Boolean isexist=list.containsKey(slang);
+        if(isexist)
+        {
+            
+            System.out.print("Nhap vao new def: ");
+            String defNew=scan.nextLine();
+            list.get(slang).clear();
+            list.get(slang).add(defNew);
+            System.out.print("Update successfully ");
+            
+            return;
+
+        }
+        else{
+            System.out.print("No exist slang ");
+            return;
+            
+        }
+    }
+    
 
 }
