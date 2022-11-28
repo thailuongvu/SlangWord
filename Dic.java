@@ -89,6 +89,45 @@ public class Dic {
         return "No found";
         
     }
+    public String findDef()
+    {
+        System.out.print("Nhap vao def: ");
+        String def=scan.nextLine();
+        StringBuilder tmp=new StringBuilder();
+        for (Map.Entry<String, List<String>> entry : list.entrySet()) {
+            
+            
+            
+            
+            for(String t:entry.getValue())
+            {
+                if(t.equals(def))
+                tmp.append(entry.getKey()+", ");
+                break;
+            }
+            // tmp.setLength(tmp.length() - 2);
+           
+                
+                
+            
+            
+        }
+        if(tmp.length()!=0)
+        {
+            tmp.setLength(tmp.length() - 2);
+            return (def+" : "+tmp);
+        }
+        return "No found";
+    }
+    public void historySearchSlang()
+    {
+        for(String tmp:history)
+        {
+            System.out.println(tmp);
+        }
+    }
+
    
+
 
 }
