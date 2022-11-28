@@ -345,6 +345,85 @@ public class Dic {
     }
 
 
+    public void quizDefinaton()
+    {
+        Set<String> keySet = list.keySet();
+        List<String> keyList = new ArrayList<>(keySet);
+
+        int size = keyList.size();
+        
+        
+        Random random = new Random();
+        List<Integer> randNum = new ArrayList<Integer>();
+
+        while (randNum.size() < 4) { // how many numbers u need - it will 6
+            int a = random.nextInt(size); // this will give numbers between 1 and 50.
+
+            if (!randNum.contains(a)) {
+                randNum.add(a);
+            }
+        }
+        String randomKey = keyList.get(randNum.get(0));
+        String randomKey1 = keyList.get(randNum.get(1));
+        String randomKey2 = keyList.get(randNum.get(2));
+        String randomKey3 = keyList.get(randNum.get(3));
+        
+        
+        String delim = "-";
+        
+        String ans1 = String.join(delim, list.get(randomKey));
+        // String ans2 = String.join(delim, list.get(randomKey1));
+        // String ans3 = String.join(delim, list.get(randomKey2));
+        // String ans4 = String.join(delim, list.get(randomKey3));
+
+        List<String> ansList=new ArrayList<String>();
+        ansList.add(randomKey);
+        ansList.add(randomKey1);
+        ansList.add(randomKey2);
+        ansList.add(randomKey3);
+        Collections.shuffle(ansList);
+        System.out.println("Your Slang quiz today is: "+ans1);
+        for (int i = 0; i < 4; i++){
+            System.out.println("Answer "+ (i+1) +": " + ansList.get(i));
+        }
+
+        Integer[] ansValid={1,2,3,4};
+        boolean checkAnsValid=false;
+        boolean checkUserAnswer = false;
+        int ans;
+        while(checkAnsValid == false){
+            System.out.println("Input your answer: ");
+            ans=Integer.parseInt(scan.nextLine());
+            for (Integer i: ansValid){
+                if(ans==i){
+                    checkAnsValid = true;
+                }
+            }
+            if(checkAnsValid==false)
+            {
+                System.out.println("Answer  invalid !!");
+                System.out.println("Please enter the correct value.");
+            }
+            else{
+                
+                if(randomKey.equals(ansList.get(ans-1)))
+                {
+                    checkUserAnswer=true;
+                    break;
+                }
+            }
+        }
+        if(checkUserAnswer){
+            System.out.println("Congratulations, correct answer.");
+        }
+        else{
+            System.out.println("Sorry, the answer is wrong.");
+        }
+
+
+    }
+
+
     
 
 
