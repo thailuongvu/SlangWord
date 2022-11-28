@@ -151,6 +151,18 @@ public class Dic {
                 System.out.println(" 2:Duplicate");
                 System.out.print(" Input your selection: ");
                 int choice=Integer.parseInt(scan.nextLine());
+                while(true)
+                {
+                    if(choice==2||choice ==1)
+                    {
+                        break;
+                    }
+                    else{
+                        System.out.println(" Your selection invalid: ");
+                        System.out.print(" Please input your selection: ");
+                        choice=Integer.parseInt(scan.nextLine());
+                    }
+                }
                 switch(choice)
                 {
                     case 1:
@@ -179,13 +191,13 @@ public class Dic {
     }
     public void editSlang()
     {
-        System.out.print("Nhap vao slang: ");
+        System.out.print("Nhap vao Slang: ");
         String slang=scan.nextLine();
         Boolean isexist=list.containsKey(slang);
         if(isexist)
         {
             
-            System.out.print("Nhap vao new def: ");
+            System.out.print("Nhap vao new definition: ");
             String defNew=scan.nextLine();
             list.get(slang).clear();
             list.get(slang).add(defNew);
@@ -200,6 +212,42 @@ public class Dic {
             
         }
     }
+    public void deleteSlang()
+    {
+        System.out.print("Nhap vao slang: ");
+        String slang=scan.nextLine();
+        int choice;
+        Boolean isexist=list.containsKey(slang);
+        if(isexist)
+        {
+            System.out.println("Do you really want delete: ");
+            System.out.println("Please Confirm by input 1 ");
+            System.out.println("Else input 0 to exit");
+            do{
+                System.out.print("Enter your selection:  ");
+                choice=Integer.parseInt(scan.nextLine());
+                if(choice>=2 ||choice<0)
+                {
+                    System.out.println("Your selection is wrong:  ");
+                }
+            }while(choice>=2 ||choice<0);
+            if(choice==1)
+            {
+                list.remove(slang);
+                return;
+            }
+            else{
+                return;
+            }
+        }
+    }
+    public void resetSlang()
+    {
+        
+        Dic d1=new Dic();
+        list=d1.list;
+    }
     
+
 
 }
