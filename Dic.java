@@ -247,6 +247,25 @@ public class Dic {
         Dic d1=new Dic();
         list=d1.list;
     }
+    public void randomSlang()
+    {
+        
+        // Object[] keyS=list.keySet().toArray();
+        // Object ans=keyS[0];
+        // System.out.println("Slang word: " + ans);
+       
+        Set<String> keySet = list.keySet();
+        List<String> keyList = new ArrayList<>(keySet);
+
+        int size = keyList.size();
+        int randIdx = new Random().nextInt(size);
+
+        String randomKey = keyList.get(randIdx);
+        List<String>tmp=new ArrayList<String>();
+        tmp=list.get(randomKey);
+        System.out.println("Slang today is: ");
+        System.out.println(randomKey + ": "+tmp);
+    }
     
 
 
