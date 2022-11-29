@@ -54,6 +54,7 @@ public class Main {
               break;
             case 6:
               d1.deleteSlang();
+              d1.export();
               break;
             case 7:
               d1.resetSlang();

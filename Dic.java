@@ -168,6 +168,7 @@ public class Dic {
                     case 1:
                         list.get(slang).clear();
                         list.get(slang).add(def);
+                        System.out.println("Adding successfully: ");
                         return;
                     case 2:
                         // List<String>newList =new ArrayList<String>();
@@ -175,6 +176,7 @@ public class Dic {
                         // System.out.print(newList);
                         // list.put(slang,newList);
                         list.get(slang).add(def);
+                        System.out.println("Adding successfully: ");
                         return;
                 }
                
@@ -186,7 +188,7 @@ public class Dic {
         }
         list.put(slang,new ArrayList<String>());
         list.get(slang).add(def);
-        
+        System.out.println("Adding successfully: ");
 
     }
     public void editSlang()
@@ -201,7 +203,7 @@ public class Dic {
             String defNew=scan.nextLine();
             list.get(slang).clear();
             list.get(slang).add(defNew);
-            System.out.print("Update successfully ");
+            System.out.println("Update successfully ");
             
             return;
 
@@ -234,6 +236,7 @@ public class Dic {
             if(choice==1)
             {
                 list.remove(slang);
+                System.out.println("Delete successfully: ");
                 return;
             }
             else{
@@ -246,6 +249,7 @@ public class Dic {
         
         Dic d1=new Dic();
         list=d1.list;
+        System.out.println("Reset successfully: ");
     }
     public void randomSlang()
     {
