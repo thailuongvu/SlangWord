@@ -91,7 +91,7 @@ public class Dic {
     }
     public String findDef()
     {
-        System.out.print("Nhap vao def: ");
+        System.out.print("Nhap vao definition: ");
         String def=scan.nextLine();
         StringBuilder tmp=new StringBuilder();
         for (Map.Entry<String, List<String>> entry : list.entrySet()) {
@@ -131,7 +131,7 @@ public class Dic {
     {
         System.out.print("Nhap vao slang: ");
         String slang=scan.nextLine();
-        System.out.print("Nhap vao def: ");
+        System.out.print("Nhap vao definition: ");
         String def=scan.nextLine();
 
         for (Map.Entry<String, List<String>> entry : list.entrySet()) {

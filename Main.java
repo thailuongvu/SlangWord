@@ -7,7 +7,6 @@ import javax.swing.plaf.basic.BasicInternalFrameTitlePane.CloseAction;
 public class Main {
 
    
-
     public static void main(String []args)
     {
         Dic d1=new Dic();
@@ -35,7 +34,6 @@ public class Main {
             switch (choice) {
             case 1:
                 
-              
               System.out.println(d1.findSlang());
               break;
             case 2:
@@ -74,14 +72,12 @@ public class Main {
             case 0:
                 flag=false;
                 break;
-                
-          }
+        }
         }while(flag==true);
         scan.close();
 
     }
     
-
 }
 
 
