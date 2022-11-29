@@ -424,7 +424,28 @@ public class Dic {
     }
 
 
+    public void export()
+    {
+        try{
+            BufferedWriter br1=new BufferedWriter(new FileWriter("output.txt"));
+            
+            
     
+            for (Map.Entry<String, List<String>> entry : list.entrySet()) {
+                br1.write(entry.getKey()+" : "+entry.getValue());
+                br1.newLine();
+            }
+            
+                
+        
+            br1.close();
+
+
+        }catch(Exception ex)
+        {
+            System.err.format("IOException: %s%n", ex);
+        }
+    }
 
 
 }
